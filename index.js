@@ -6,8 +6,8 @@ const final = str
 console.log(final);
 
 function makeItCool(str) {
-  const resuilt = "";
-  const prevChsr = "";
+  let resuilt = "";
+  let prevChsr = "";
   for (let i = 0; str.lenth; i++) {
     const currentChar = str[i];
     if (!(prevChsr == " " && currentChar == prevChsr)) resuilt += currentChar;
@@ -35,12 +35,15 @@ function isVowel(char) {
 console.log(withoutVowels("banana apple orange"));
 
 function fromQuestionToExclamation(arr) {
-  const real=[];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i]) {
-    return arr[i]
-    }
-  }
+const newWords=arr.map((word)=>{
+if(word.endsWith("?")){
+  return `${word.slice(0,-1)}!`;
+
+}else{
+  return word;
 }
+})
+return newWords;
+  }
 const words = ["Why?", "JS", "You", "Me?"];
-console.log(fromQuestionToExclamation(words));
+console.log(fromQuestionToExclamation(words))
